@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Sora', sans-serif;
+        }
+
+        * {box-sizing: border-box}
+
+        
+        .container {
+        padding: 16px;
+        }
+
+       
+        input[type=text], input[type=password], textarea,input[type=number] {
+        width: 60%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #d6d3d3;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+        }
+
+        
+        hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+        }
+
+        
+        .registerbtn {
+        background-color: #471fb6;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 50%;
+        opacity: 0.9;
+        border-radius: 7px;
+        }
+
+        .registerbtn:hover {
+        opacity:1;
+        }
+
+        a {
+        color: dodgerblue;
+        }
+
+        .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+        }
+    </style>
+
+    <form action="/create-post" method="POST">
+        <div class="container">
+          <h1>Welcome to the Admin Panel!</h1>
+          <p>Create new post:</p>
+          <hr>
+      
+          <label for="email"><b>Post Title</b></label> <br>
+          <input type="text" placeholder="Post Title" name="title" required><br>
+      
+          <label for="email"><b>Post Content</b></label> <br>
+          <textarea style="height: 200px;" placeholder="Post Content" type="text" name="content" required></textarea> <br>      
+      
+          <label for="email"><b>Post URL</b></label> <br>
+          <input style="width: 340px;" type="text" placeholder="Ex: new-post" name="postUrl" required><br>
+
+          <label for="psw"><b>Max. Reading Min.</b></label> <br>
+          <input style="width: 70px;" type="number" name="maxread" required> <br>
+            <hr>
+          <input style="width: 180px;" placeholder="Verify Code" type="number" name="verify" required>
+          <button style="width: 100px;" type="submit" class="registerbtn">Publish!</button>
+        </div>
+        </form>
+</body>
+</html>
