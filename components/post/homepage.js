@@ -47,7 +47,19 @@ module.exports = function(app) {
                   res.write('<hr>')
                   res.write('<b><a href="/posts/'+posts.post_url+'"><h2> ' + posts.title + '</h2></a> </b> ');
                   res.write('<i><p style="font-size:12px"> ' + posts.post_date + ' </i> - Reading Time: ' + posts.read_time + `</p>`);
+
+                  if(Object.keys(posts.content).length > 40) {
+                    res.write(posts.content.slice(0, 40));
+                    res.write('..<a href="/posts/'+posts.post_url+'">Devamını Oku</a>')
+                  } else {
+                    res.write(posts.content);
+                    res.write('..<a href="/posts/'+posts.post_url+'">Devamını Oku</a>')
+                  }
+                    
+
                   res.write('<hr>')
+
+                  
               };
               }
 
